@@ -1,0 +1,254 @@
+{
+  "last_node_id": 119,
+  "last_link_id": 238,
+  "nodes": [
+    {
+      "id": 116,
+      "type": "MarigoldDepthEstimation",
+      "pos": {
+        "0": 425,
+        "1": -911
+      },
+      "size": {
+        "0": 315,
+        "1": 394
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 234
+        }
+      ],
+      "outputs": [
+        {
+          "name": "ensembled_image",
+          "type": "IMAGE",
+          "links": [
+            235,
+            236
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MarigoldDepthEstimation"
+      },
+      "widgets_values": [
+        502212053974132,
+        "randomize",
+        10,
+        10,
+        0.02,
+        "median",
+        5,
+        0.001,
+        true,
+        true,
+        2,
+        true,
+        "DDIMScheduler",
+        true,
+        "Marigold"
+      ]
+    },
+    {
+      "id": 119,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1399,
+        "1": -517
+      },
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 238
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 118,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1003,
+        "1": -917
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 235
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 115,
+      "type": "StereoscopicGenerator",
+      "pos": {
+        "0": 988,
+        "1": -521
+      },
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "base_image",
+          "type": "IMAGE",
+          "link": 237
+        },
+        {
+          "name": "depth_map",
+          "type": "IMAGE",
+          "link": 236
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            238
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StereoscopicGenerator"
+      },
+      "widgets_values": [
+        80
+      ]
+    },
+    {
+      "id": 117,
+      "type": "LoadImage",
+      "pos": {
+        "0": -80,
+        "1": -916
+      },
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            234,
+            237
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "xyzbwb2h.jpg",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      234,
+      117,
+      0,
+      116,
+      0,
+      "IMAGE"
+    ],
+    [
+      235,
+      116,
+      0,
+      118,
+      0,
+      "IMAGE"
+    ],
+    [
+      236,
+      116,
+      0,
+      115,
+      1,
+      "IMAGE"
+    ],
+    [
+      237,
+      117,
+      0,
+      115,
+      0,
+      "IMAGE"
+    ],
+    [
+      238,
+      115,
+      0,
+      119,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.2839025177495011,
+      "offset": [
+        -11.519341452769337,
+        1435.850969376226
+      ]
+    },
+    "workspace_info": {
+      "id": "q1qfCWyRTfN21D0iKf_SA"
+    }
+  },
+  "version": 0.4
+}

@@ -1,0 +1,302 @@
+{
+  "last_node_id": 124,
+  "last_link_id": 255,
+  "nodes": [
+    {
+      "id": 119,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1393,
+        "1": -569
+      },
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 242
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 118,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 978,
+        "1": -910
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 251
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 117,
+      "type": "LoadImage",
+      "pos": {
+        "0": -80,
+        "1": -916
+      },
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            248,
+            253
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "harold-hide-the-pain-meme-09.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 124,
+      "type": "DepthAnythingV2Preprocessor",
+      "pos": {
+        "0": 407,
+        "1": -1079
+      },
+      "size": {
+        "0": 352.79998779296875,
+        "1": 82
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 248
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingV2Preprocessor"
+      },
+      "widgets_values": [
+        "depth_anything_v2_vitl.pth",
+        512
+      ]
+    },
+    {
+      "id": 116,
+      "type": "MarigoldDepthEstimation",
+      "pos": {
+        "0": 412,
+        "1": -834
+      },
+      "size": {
+        "0": 315,
+        "1": 394
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "ensembled_image",
+          "type": "IMAGE",
+          "links": [
+            251,
+            255
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MarigoldDepthEstimation"
+      },
+      "widgets_values": [
+        832444100798541,
+        "randomize",
+        10,
+        10,
+        0.02,
+        "median",
+        5,
+        0.001,
+        true,
+        true,
+        2,
+        true,
+        "DDIMScheduler",
+        true,
+        "Marigold"
+      ]
+    },
+    {
+      "id": 120,
+      "type": "AutostereogramGenerator",
+      "pos": {
+        "0": 916,
+        "1": -563
+      },
+      "size": {
+        "0": 340.20001220703125,
+        "1": 318
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "depth_map",
+          "type": "IMAGE",
+          "link": 255
+        },
+        {
+          "name": "texture",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            242
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AutostereogramGenerator"
+      },
+      "widgets_values": [
+        8,
+        false,
+        2,
+        128,
+        128,
+        "perlin",
+        1,
+        4,
+        "rgb",
+        0,
+        0
+      ]
+    }
+  ],
+  "links": [
+    [
+      242,
+      120,
+      0,
+      119,
+      0,
+      "IMAGE"
+    ],
+    [
+      248,
+      117,
+      0,
+      124,
+      0,
+      "IMAGE"
+    ],
+    [
+      251,
+      116,
+      0,
+      118,
+      0,
+      "IMAGE"
+    ],
+    [
+      253,
+      117,
+      0,
+      116,
+      0,
+      "IMAGE"
+    ],
+    [
+      255,
+      116,
+      0,
+      120,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 3.663123722407857,
+      "offset": [
+        -788.6430115607867,
+        669.766336290753
+      ]
+    },
+    "workspace_info": {
+      "id": "b-ANN_cDp3gBvnJbCdmgy"
+    }
+  },
+  "version": 0.4
+}
