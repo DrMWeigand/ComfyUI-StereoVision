@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-stereovision"
+description = "A ComfyUI node for producing stereoscopic and autostereogram (magic eye) images and videos."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["torch", "Pillow", "numpy", "tqdm", "numba", "opencv-python", "scipy"]
+
+[project.urls]
+Repository = "https://github.com/DrMWeigand/ComfyUI-StereoVision"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "drunreal"
+DisplayName = "ComfyUI-StereoVision"
+Icon = ""
