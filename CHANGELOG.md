@@ -1,3 +1,7 @@
+## [1.1.2] - 2025-02-04
+### Added
+- Changelog
+
 ## [1.1.1] - 2025-02-04
 ### Added
 - Workflow for creating arbitrarily long stereoscopic videos using VHS batching.
