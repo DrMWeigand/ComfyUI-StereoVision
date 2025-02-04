@@ -1,7 +1,7 @@
 [project]
-name = "comfyui-stereovision"
+name = "ComfyUI-StereoVision"
 description = "A ComfyUI node for producing stereoscopic and autostereogram (magic eye) images and videos."
-version = "1.1.1"
+version = "1.1.2"
 license = {file = "LICENSE"}
 dependencies = ["torch", "Pillow", "numpy", "tqdm", "numba", "opencv-python", "scipy"]
 
