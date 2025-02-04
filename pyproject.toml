@@ -12,4 +12,4 @@ Repository = "https://github.com/DrMWeigand/ComfyUI-StereoVision"
 [tool.comfy]
 PublisherId = "drunreal"
 DisplayName = "ComfyUI-StereoVision"
-Icon = ""
+Icon = "https://www.mws.biz/wp-content/uploads/2021/02/cropped-MWSoftwareFavicon-1-180x180.png"
